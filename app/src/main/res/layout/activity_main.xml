@@ -23,8 +23,6 @@
         app:headerLayout="@layout/nav_header_main"
         app:itemIconTint="@android:color/white"
         app:itemTextColor="@android:color/white"
-        app:menu="@menu/activity_main_drawer" />
-
-    <!-- app:theme="@style/AppTheme.NavigationItem" -->
-
+        app:menu="@menu/activity_main_drawer"
+        app:theme="@style/AppTheme.NavigationItem"/>
 </android.support.v4.widget.DrawerLayout>

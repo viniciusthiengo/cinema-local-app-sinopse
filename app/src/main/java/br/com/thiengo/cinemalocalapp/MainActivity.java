@@ -1,6 +1,7 @@
 package br.com.thiengo.cinemalocalapp;
 
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.internal.NavigationMenuView;
@@ -13,13 +14,20 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import br.com.thiengo.cinemalocalapp.data.Mock;
+import br.com.thiengo.cinemalocalapp.util.CustomTypefaceSpan;
+import br.com.thiengo.cinemalocalapp.util.Font;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     private Toolbar toolbar;
 
@@ -30,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //applyToolbarCustomFont();
+        applyToolbarCustomFont();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -42,13 +50,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         NavigationMenuView navMenuView = (NavigationMenuView) navigationView.getChildAt(0);
         navMenuView.addItemDecoration(new DividerItemDecoration( MainActivity.this,DividerItemDecoration.VERTICAL) );
-        //customFontNavigationView();
+        customFontNavigationViewMenu();
 
         initRecycler();
 
         LinearLayout ll = (LinearLayout) navigationView.getHeaderView(0);
         TextView tvNavHeaderTitle = (TextView) ll.getChildAt(0);
-        //Font.setFascinateInline( tvNavHeaderTitle );
+        Font.setFascinateInline( tvNavHeaderTitle );
     }
 
     private void initRecycler(){
@@ -79,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    /*public void applyToolbarCustomFont(){
+    public void applyToolbarCustomFont(){
         for(int i = 0; i < toolbar.getChildCount(); i++){
             View view = toolbar.getChildAt(i);
             if(view instanceof TextView){
@@ -93,29 +101,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    private void customFontNavigationView(){
-        NavigationView navView = (NavigationView) findViewById(R.id.nav_view);
-        Menu m = navView.getMenu();
-        for (int i=0;i<m.size();i++) {
-            MenuItem mi = m.getItem(i);
+    private void customFontNavigationViewMenu(){
+        NavigationView navView = (NavigationView) findViewById( R.id.nav_view );
+        Menu menu = navView.getMenu();
 
-            //for aapplying a font to subMenu ...
-            SubMenu subMenu = mi.getSubMenu();
-            if (subMenu!=null && subMenu.size() >0 ) {
-                for (int j=0; j <subMenu.size();j++) {
+        for( int i = 0; i < menu.size(); i++ ) {
+            MenuItem menuItem = menu.getItem(i);
+
+            /*SubMenu subMenu = menuItem.getSubMenu();
+            if( subMenu != null && subMenu.size() > 0 ) {
+                for( int j = 0; j < subMenu.size(); j++ ) {
                     MenuItem subMenuItem = subMenu.getItem(j);
-                    applyFontToMenuItem(subMenuItem);
+                    setCustomFontMenuItem(subMenuItem);
                 }
-            }
-            //the method we have create in activity
-            applyFontToMenuItem(mi);
+            }*/
+
+            setCustomFontMenuItem( menuItem );
         }
     }
 
-    private void applyFontToMenuItem(MenuItem mi) {
-        Typeface font = Typeface.createFromAsset(getAssets(), "AmaticSC.ttf");
-        SpannableString mNewTitle = new SpannableString(mi.getTitle());
-        mNewTitle.setSpan(new CustomTypefaceSpan("" , font), 0 , mNewTitle.length(),  Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-        mi.setTitle(mNewTitle);
-    }*/
+    private void setCustomFontMenuItem(MenuItem menuItem) {
+        Typeface font = Font.getAmaticSC( this );
+        SpannableString textItem = new SpannableString( menuItem.getTitle() );
+
+        textItem.setSpan(
+                new CustomTypefaceSpan("" , font),
+                0,
+                textItem.length(),
+                Spannable.SPAN_INCLUSIVE_INCLUSIVE );
+
+        menuItem.setTitle(textItem);
+    }
 }

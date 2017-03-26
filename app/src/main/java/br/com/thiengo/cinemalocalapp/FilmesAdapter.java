@@ -56,8 +56,8 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
             ivFilme = (ImageView) itemView.findViewById(R.id.iv_filme);
             tvNome = (TextView) itemView.findViewById(R.id.tv_nome);
             tvQtdSalas = (TextView) itemView.findViewById(R.id.tv_qtd_salas);
-            Font.setFascinateInline( tvNome );
             Font.setAmaticSC( tvQtdSalas );
+            Font.setFascinateInline( tvNome );
 
             itemView.setOnClickListener(this);
         }

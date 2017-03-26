@@ -36,4 +36,8 @@ public class Font {
         Typeface face = Typeface.createFromAsset( tv.getContext().getAssets(), "AmaticSC.ttf");
         tv.setTypeface( face );
     }
+
+    public static Typeface getAmaticSC(Context context){
+        return Typeface.createFromAsset( context.getAssets(), "AmaticSC.ttf");
+    }
 }
