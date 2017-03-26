@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/viniciusthiengo/Desktop/CinemaLocalApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cadccbaf25f7759ff8362daf337a5d1bb1d4986b">
+        <dex dex="/Users/viniciusthiengo/Desktop/CinemaLocalApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_f17137b9fd92b4f3078136059be57a916c50b905/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/viniciusthiengo/Desktop/CinemaLocalApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/Users/viniciusthiengo/Desktop/CinemaLocalApp/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_d19de2a55f1cb88c1b1d0b1de6ae7b7f4bc098fd/classes.dex" />
+    </item>
+
+</items>

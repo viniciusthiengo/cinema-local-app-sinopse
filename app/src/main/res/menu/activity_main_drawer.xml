@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_luximetro"
+            android:checked="true"
+            android:title="Luxímetro" />
+        <item
+            android:id="@+id/nav_simulador_lateral"
+            android:title="Simulador de ilum. lateral" />
+        <item
+            android:id="@+id/nav_simulador_geral"
+            android:title="Simulador de ilum. geral" />
+        <item
+            android:id="@+id/nav_consumo"
+            android:title="Consumo" />
+        <item
+            android:id="@+id/nav_goniofotometro"
+            android:title="Goniofotometro" />
+        <item
+            android:id="@+id/nav_telefone_contato"
+            android:title="Telefone de Contato" />
+        <item
+            android:id="@+id/nav_email_contato"
+            android:title="E-mail de Contato" />
+        <item
+            android:id="@+id/nav_site_trust"
+            android:title="Site Trust" />
+    </group>
+</menu>
