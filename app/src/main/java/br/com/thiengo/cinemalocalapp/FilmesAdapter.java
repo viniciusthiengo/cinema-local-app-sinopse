@@ -12,8 +12,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-import br.com.thiengo.cinemalocalapp.data.Font;
 import br.com.thiengo.cinemalocalapp.domain.Filme;
+import br.com.thiengo.cinemalocalapp.util.Font;
 
 
 public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder> {

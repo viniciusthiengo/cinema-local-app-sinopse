@@ -1,7 +1,6 @@
 package br.com.thiengo.cinemalocalapp;
 
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.internal.NavigationMenuView;
@@ -14,18 +13,11 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.view.SubMenu;
-import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import br.com.thiengo.cinemalocalapp.data.Font;
 import br.com.thiengo.cinemalocalapp.data.Mock;
-import br.com.thiengo.cinemalocalapp.util.CustomTypefaceSpan;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -38,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        applyToolbarCustomFont();
+        //applyToolbarCustomFont();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -49,14 +41,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         NavigationMenuView navMenuView = (NavigationMenuView) navigationView.getChildAt(0);
-        navMenuView.addItemDecoration(new DividerItemDecoration(MainActivity.this,DividerItemDecoration.VERTICAL));
-        customFontNavigationView();
+        navMenuView.addItemDecoration(new DividerItemDecoration( MainActivity.this,DividerItemDecoration.VERTICAL) );
+        //customFontNavigationView();
 
         initRecycler();
 
         LinearLayout ll = (LinearLayout) navigationView.getHeaderView(0);
         TextView tvNavHeaderTitle = (TextView) ll.getChildAt(0);
-        Font.setFascinateInline( tvNavHeaderTitle );
+        //Font.setFascinateInline( tvNavHeaderTitle );
     }
 
     private void initRecycler(){
@@ -87,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    public void applyToolbarCustomFont(){
+    /*public void applyToolbarCustomFont(){
         for(int i = 0; i < toolbar.getChildCount(); i++){
             View view = toolbar.getChildAt(i);
             if(view instanceof TextView){
@@ -125,5 +117,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         SpannableString mNewTitle = new SpannableString(mi.getTitle());
         mNewTitle.setSpan(new CustomTypefaceSpan("" , font), 0 , mNewTitle.length(),  Spannable.SPAN_INCLUSIVE_INCLUSIVE);
         mi.setTitle(mNewTitle);
-    }
+    }*/
 }

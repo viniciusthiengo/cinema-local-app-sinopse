@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import br.com.thiengo.cinemalocalapp.data.Font;
 import br.com.thiengo.cinemalocalapp.domain.Filme;
 
 public class DetalhesActivity extends AppCompatActivity {
@@ -31,8 +30,8 @@ public class DetalhesActivity extends AppCompatActivity {
 
         CollapsingToolbarLayout collapsing = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout) ;
         collapsing.setTitle( filme.getNome() );
-        collapsing.setCollapsedTitleTypeface( Font.getFascinateInline(this) );
-        collapsing.setExpandedTitleTypeface( Font.getFascinateInline(this) );
+        //collapsing.setCollapsedTitleTypeface( Font.getFascinateInline(this) );
+        //collapsing.setExpandedTitleTypeface( Font.getFascinateInline(this) );
 
         ImageView ivHeader = (ImageView) findViewById(R.id.iv_header);
         Picasso
@@ -42,7 +41,7 @@ public class DetalhesActivity extends AppCompatActivity {
 
         TextView tvSinopse = (TextView) findViewById(R.id.tv_sinopse);
         tvSinopse.setText( filme.getSinopse() );
-        Font.setAmaticSC( tvSinopse );
+        //Font.setAmaticSC( tvSinopse );
     }
 
     @Override

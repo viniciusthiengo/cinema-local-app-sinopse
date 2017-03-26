@@ -3,29 +3,35 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_luximetro"
+            android:id="@+id/nav_item_1"
             android:checked="true"
-            android:title="Luxímetro" />
+            android:title="Todos os filmes" />
         <item
-            android:id="@+id/nav_simulador_lateral"
-            android:title="Simulador de ilum. lateral" />
+            android:id="@+id/nav_item_2"
+            android:title="Estouro de bilheteria" />
         <item
-            android:id="@+id/nav_simulador_geral"
-            android:title="Simulador de ilum. geral" />
+            android:id="@+id/nav_item_3"
+            android:title="Com mais críticas" />
         <item
-            android:id="@+id/nav_consumo"
-            android:title="Consumo" />
+            android:id="@+id/nav_item_4"
+            android:title="Com atores consagrados" />
         <item
-            android:id="@+id/nav_goniofotometro"
-            android:title="Goniofotometro" />
+            android:id="@+id/nav_item_5"
+            android:title="Old school" />
         <item
-            android:id="@+id/nav_telefone_contato"
-            android:title="Telefone de Contato" />
+            android:id="@+id/nav_item_6"
+            android:title="New school" />
         <item
-            android:id="@+id/nav_email_contato"
-            android:title="E-mail de Contato" />
+            android:id="@+id/nav_item_7"
+            android:title="Good school" />
         <item
-            android:id="@+id/nav_site_trust"
-            android:title="Site Trust" />
+            android:id="@+id/nav_item_8"
+            android:title="Foram só promessas" />
+        <item
+            android:id="@+id/nav_item_9"
+            android:title="Históricos" />
+        <item
+            android:id="@+id/nav_item_10"
+            android:title="Sinônimo de Oscar" />
     </group>
 </menu>
